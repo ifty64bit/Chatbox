@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('partials/head') %>
+</head>
+<body>
+    <div class="container">
+        <div class="" id="messages">
+            <% if(true)
+            {
+            msg.forEach(m=>{ %>
+                <div class="d-flex <%= m.sender==user?'':'flex-row-reverse' %>">
+                    <p><%= m.msg%></p>
+                </div>
+                <% })} %>
+        </div>
+        <div class="position-absolute bottom-0 start-50 translate-middle-x">
+            <input type="text" name="msg" id="msg">
+            <button class="btn btn-primary" id="btn" >Send</button>
+        </div>
+    </div>
+    <script>
+        let uname= <%- JSON.stringify(from) %>;
+    </script>
+    <script src="/message.js"></script>
+</body>
+</html>

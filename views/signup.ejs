@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('partials/head') %>
+</head>
+<body>
+    <div class="container">
+        <form action="/signup" method="post">
+            <div>
+                <label for="uname">Username</label>
+                <input class="form-control" type="text" name="uname" id="uname">
+                <% if(errors.uname){ %>
+                    <p><%= errors.uname.msg %></p>
+                <% } %>
+                <% if(errors){ %>
+                    <p><%= errors %></p>
+                <% } %>
+            </div>
+            <div>
+                <label for="pass1">Password</label>
+                <input class="form-control" type="text" name="pass1" id="pass1">
+                <% if(errors.pass2){ %>
+                    <p><%= errors.pass2.msg %></p>
+                <% } %>
+            </div>
+            <div>
+                <label for="pass2">Password Again</label>
+                <input class="form-control" type="text" name="pass2" id="pass2">
+                <% if(errors.pass2){ %>
+                    <p><%= errors.pass2.msg %></p>
+                <% } %>
+            </div>
+            <div>
+                <input class="btn btn-primary mt-4" type="submit" value="Signup">
+            </div>
+        </form>
+    </div>
+</body>
+</html>
